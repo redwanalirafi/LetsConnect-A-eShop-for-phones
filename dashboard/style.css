@@ -1,0 +1,11 @@
+body{
+    font-family: 'Dosis', sans-serif;
+    font-family: 'M PLUS Code Latin', sans-serif;
+    font-family: 'Open Sans', sans-serif;
+    font-family: 'Zen Kurenaido', sans-serif;
+    font-size: 22px;
+}
+
+.dark{
+    background-color: #111111;
+}
