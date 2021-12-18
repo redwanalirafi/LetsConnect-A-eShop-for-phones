@@ -91,40 +91,48 @@
                 <button name="submit2" type="submit" class="btn btn-lg btn-primary">Add Admin</button>
             </form>
         </div>
-        <div class="col"><div class="col mx-5">
-            <div class="mb-3 col-5">
-                <h1>Add a new Stuff:</h1>
+        <div class="col">
+            <div class="">
+                <div class="mb-3 col-5">
+                    <h1>Add a new Stuff:</h1>
+                </div>
+                <form action="op_add_stuff.php" method="post">
+                    <div class="mb-1 col-5">
+                        <label class="form-label">Username:</label>
+                        <input type="text" class="form-control" name="stuff_user">
+                    </div>
+                    <div class="mb-1 col-5">
+                        <label class="form-label">Password:</label>
+                        <input type="password" class="form-control" name="stuff_pass">
+                    </div>
+
+                    <div class="mb-1 col-5">
+                        <label class="form-label">Full Name:</label>
+                        <input type="text" class="form-control" name="stuff_name">
+                    </div>
+
+                    <div class="mb-1 col-5">
+                        <label class="form-label">Email:</label>
+                        <input type="text" class="form-control" name="stuff_mail">
+                    </div>
+
+                    <div class="mb-1 col-5">
+                        <label class="form-label">Phone:</label>
+                        <input type="text" class="form-control" name="stuff_phone">
+                    </div>
+                    <label class="form-label mb-1">Role:</label><br>
+                    <select class="custom-select col-5" name="stuff_role">
+                        <option selected value="stuff">Stuff</option>
+                        <option value="p_manager">Product Manager</option>
+                        <option value="d_manager">Delivary Manager</option>
+                        <option value="m_manager">Marketing Manager</option>
+                    </select><br><br>
+                    <button name="submit3" type="submit" class="btn btn-lg btn-primary">Add Stuff</button>
+                </form>
             </div>
-            <form action="op_add_stuff.php" method="post">
-                <div class="mb-3 col-5">
-                    <label class="form-label">Username:</label>
-                    <input type="text" class="form-control" name="stuff_user">
-                </div>
-                <div class="mb-3 col-5">
-                    <label class="form-label">Password:</label>
-                    <input type="password" class="form-control" name="stuff_pass">
-                </div>
+        </div>
 
-                <div class="mb-3 col-5">
-                    <label class="form-label">Full Name:</label>
-                    <input type="text" class="form-control" name="stuff_name">
-                </div>
-
-                <div class="mb-3 col-5">
-                    <label class="form-label">Email:</label>
-                    <input type="text" class="form-control" name="stuff_mail">
-                </div>
-
-                <div class="mb-3 col-5">
-                    <label class="form-label">Phone:</label>
-                    <input type="text" class="form-control" name="stuff_phone">
-                </div>
-
-                <button name="submit3" type="submit" class="btn btn-lg btn-primary">Add Stuff</button>
-            </form>
-        </div></div>
-        
-      </div>
+    </div>
 
 
     <!-- Optional JavaScript; choose one of the two! -->
