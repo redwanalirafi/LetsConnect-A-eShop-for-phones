@@ -73,36 +73,58 @@
     </nav>
 
 
+    <div class="row my-5">
+        <div class="col mx-5">
+            <div class="mb-3 col-5">
+                <h1>Add a new Admin:</h1>
+            </div>
+            <form action="op_add_admin.php" method="post">
+                <div class="mb-3 col-5">
+                    <label class="form-label">Username:</label>
+                    <input type="text" class="form-control" name="admin_user">
+                </div>
+                <div class="mb-3 col-5">
+                    <label class="form-label">Password:</label>
+                    <input type="password" class="form-control" name="admin_pass">
+                </div>
 
-    <div class="container my-2">
-        <br>
-        <h3>Add Role:</h3><br>
-        <hr>
-        <div class="mb-3 col-4">
-            <label class="form-label">Role:</label>
-            <select class="form-select col-4" name="stuff_role">
-                <option value="admin">Admin</option>
-                <option value="seller">Seller</option>
-                <option value="user">User</option>
-                <option selected value="stuff">Stuff</option>
-            </select>
+                <button name="submit2" type="submit" class="btn btn-lg btn-primary">Add Admin</button>
+            </form>
         </div>
-        <form action="op_stuff.php" method="post">
-            <div class="mb-3 col-4">
-                <label class="form-label">Username:</label>
-                <input type="text" class="form-control" name="stuff_user">
+        <div class="col"><div class="col mx-5">
+            <div class="mb-3 col-5">
+                <h1>Add a new Stuff:</h1>
             </div>
-            <div class="mb-3 col-4">
-                <label class="form-label">Password:</label>
-                <input type="password" class="form-control" name="stuff_pass">
-            </div>
+            <form action="op_add_stuff.php" method="post">
+                <div class="mb-3 col-5">
+                    <label class="form-label">Username:</label>
+                    <input type="text" class="form-control" name="stuff_user">
+                </div>
+                <div class="mb-3 col-5">
+                    <label class="form-label">Password:</label>
+                    <input type="password" class="form-control" name="stuff_pass">
+                </div>
 
-            <button name="submit2" type="submit" class="btn btn-lg btn-primary">Submit</button>
-        </form>
+                <div class="mb-3 col-5">
+                    <label class="form-label">Full Name:</label>
+                    <input type="text" class="form-control" name="stuff_name">
+                </div>
 
-    </div>
+                <div class="mb-3 col-5">
+                    <label class="form-label">Email:</label>
+                    <input type="text" class="form-control" name="stuff_mail">
+                </div>
 
+                <div class="mb-3 col-5">
+                    <label class="form-label">Phone:</label>
+                    <input type="text" class="form-control" name="stuff_phone">
+                </div>
 
+                <button name="submit3" type="submit" class="btn btn-lg btn-primary">Add Stuff</button>
+            </form>
+        </div></div>
+        
+      </div>
 
 
     <!-- Optional JavaScript; choose one of the two! -->
