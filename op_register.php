@@ -1,10 +1,8 @@
 <?php
-    include "../auth.php";
-    if($_SESSION['role']!="admin"){
-        echo "<script>top.window.location = './index.php?error=Access denied'</script>";
-    }
+
 
 ?>
+
 <!doctype html>
 <html lang="en">
 
@@ -34,33 +32,64 @@
     <div class="container">
         <div class="d-grid gap-2 col-6 mx-auto my-5 px-3">
             <?php
+            
+            include_once 'dashboard/db.php';
 
-            include_once 'db.php';
+            if(!isset($_POST['user_role'])){
+                header("Location: register.php?error=Select role");
+                exit();
+            }
 
-            if(isset($_POST['submit2']))
-            {   
-                $username=$_POST['admin_user'];
-                $password=$_POST['admin_pass'];
+            $user = $_POST['user_name'];
+            $pass = $_POST['user_pass'];
+            $fname = $_POST['user_fname'];
+            $email = $_POST['user_email'];
+            $phone = $_POST['user_phone'];
+            $role = $_POST['user_role'];
+
+            if(empty($user)){
+                header("Location: register.php?error=Enter username");
+                exit();
+            }
+            if(empty($pass)){
+                header("Location: register.php?error=Enter password");
+                exit();
+            }
+            if(empty($fname)){
+                header("Location: register.php?error=Enter Fullname");
+                exit();
+            }
+            if(empty($email)){
+                header("Location: register.php?error=Enter Email");
+                exit();
+            }
+            if(empty($phone)){
+                header("Location: register.php?error=Enter Phone");
+                exit();
+            }
+
+
+ 
                 
-                $sql = "INSERT INTO users (username,password, power) VALUES ('$username','$password','admin')";
+            $sql = "INSERT INTO users (username,password, full_name,email,phone,power) VALUES ('$user','$pass','$fname','$email','$phone','$role')";
 
-                if (mysqli_query($conn, $sql)) {
-                    echo "<div class='alert alert-success' role='alert'>
-                    Admin added successfully.
+             if (mysqli_query($conn, $sql)) {
+                 echo "<div class='alert alert-success' role='alert'>
+                 Registration Successfull.
                 </div>";
 
-                } else {
-                    echo "Error: " . $sql . ":-" . mysqli_error($conn);
-                    echo "
-                    <div class='alert alert-danger' role='alert'>
-                        Error!
-                        </div>";
-                }
+            } else {
+                echo "Error: " . $sql . ":-" . mysqli_error($conn);
+                echo "
+                <div class='alert alert-danger' role='alert'>
+                      Error!
+                  </div>";
+                
             }
 
 
             ?>
-            <a class="my-5 mx-auto btn btn-outline-dark " href="./add_stuff.php" style="width: 200px; font-size:25px">Go Back</a>
+            <a class="my-5 mx-auto btn btn-outline-dark " href="./login.php" style="width: 200px; font-size:25px">Go Back</a>
         </div>
     </div>    
     <!-- Optional JavaScript; choose one of the two! -->

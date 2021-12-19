@@ -116,7 +116,7 @@
 
             <br>
             <div class="d-grid gap-2 col-6 mx-auto">
-                <button name= "submit" type="submit" class="btn btn-outline-dark" style="font-size : 20px;">Sumbit</button>
+                <button name= "submit" type="submit" class="btn btn-dark" style="font-size : 20px;">Sumbit</button>
             </div>
 
         </form>

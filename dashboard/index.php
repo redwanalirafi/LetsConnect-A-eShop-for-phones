@@ -127,16 +127,24 @@
                 </a>
             </div>
             <div class="col">
-                <a href="./pending.php" style="text-decoration: none;">
-                    <div class="card text-dark bg-light mb-3" style="width: auto;">
-                        <div class="card-header">Pending Product</div>
-                        <div class="card-body">
-                            <span style="font-size: 50px; color: #111111;">
-                                <i class="fas fa-history"></i>
-                            </span>
+                <?php
+
+                if($_SESSION['role']=="admin"){
+                    echo "<a href='./pending.php' style='text-decoration: none;'>
+                    <div class='card text-dark bg-light mb-3' style='width: auto;'>
+                        <div class='card-header'>Pending Product</div>
+                        <div class='card-body'>
+                            <span style='font-size: 50px; color: #111111;'>
+                                    <i class='fas fa-history'></i>
+                                </span>
+                            </div>
                         </div>
-                    </div>
-                </a>
+                    </a>
+                    ";
+                }
+
+                ?>
+                
             </div>
         </div>
 
