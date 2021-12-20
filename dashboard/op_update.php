@@ -33,7 +33,6 @@
         WHERE id=$id;";
 
         
-        //$sql = "INSERT INTO product_details (ram) VALUES('gx');";
         if (mysqli_query($conn, $sql)) {
             $img = "<img src='https://img.icons8.com/color/50/000000/checked-2.png'/>";
             $checker=true;

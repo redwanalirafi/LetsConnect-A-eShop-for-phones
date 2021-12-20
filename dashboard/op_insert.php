@@ -1,4 +1,5 @@
 <?php
+    session_start();
     $img = "<img src='https://img.icons8.com/emoji/48/000000/cross-mark-emoji.png'/>";
     $checker=false;
 
@@ -20,7 +21,9 @@
         $x12 = $_POST['x12'];
         $x13 = $_POST['x13'];   
 
-        $sql0 = "INSERT INTO products (seller, pending) values ('username',0)";
+        $sql0 = "INSERT INTO products (seller, pending) values ('".$_SESSION['username']."',0)";
+
+
 
         if (mysqli_query($conn, $sql0)) {
             echo " hoise ";
