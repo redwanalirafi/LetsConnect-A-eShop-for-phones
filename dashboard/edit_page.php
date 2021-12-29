@@ -95,7 +95,7 @@
             <input class="form-control my-3" value="<?php echo  $row['storage']; ?>" type="text" placeholder="Storage" name="x5">
             <input class="form-control my-3" value="<?php echo  $row['battery']; ?>" type="text" placeholder="Battery" name="x6">
             <input class="form-control my-3" value="<?php echo  $row['ram']; ?>" type="text" placeholder="Ram" name="x7">
-            <input class="form-control my-3" value="<?php echo  $row['freader']; ?>" type="text" placeholder="Fingerprint Reader" name="x8">
+            <input class="form-control my-3" value="<?php echo  $row['color']; ?>" type="text" placeholder="Fingerprint Reader" name="x8">
             <input class="form-control my-3" value="<?php echo  $row['connectivity']; ?>" type="text" placeholder="Connectivity" name="x9">
             <input class="form-control my-3" value="<?php echo  $row['sim']; ?>" type="text" placeholder="SIM Card" name="x10">
             <input class="form-control my-3" value="<?php echo  $row['sensor']; ?>" type="text" placeholder="Sensors" name="x11">

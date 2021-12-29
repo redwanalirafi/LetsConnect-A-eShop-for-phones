@@ -29,7 +29,7 @@
         
         
         $sql = "UPDATE product_details 
-        SET model='$x0', display='$x1', processor='$x2', fcam='$x3', rcam='$x4', storage='$x5', battery='$x6', ram='$x7', freader='$x8', connectivity='$x9', sim='$x10', sensor='$x11', picture='$x12', price='$x13' 
+        SET model='$x0', display='$x1', processor='$x2', fcam='$x3', rcam='$x4', storage='$x5', battery='$x6', ram='$x7', color='$x8', connectivity='$x9', sim='$x10', sensor='$x11', picture='$x12', price='$x13' 
         WHERE id=$id;";
 
         

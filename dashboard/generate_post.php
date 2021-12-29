@@ -42,7 +42,7 @@
 
             $link=$row['picture'];
 
-            echo "<img src=". $link ." class='rounded mx-auto d-block mt-3' width='300' height='300'>";
+            echo "<img src=". $link ." class='rounded mx-auto d-block mt-3' height='200'>";
 
         ?>
 
@@ -99,8 +99,8 @@
                             <td>". $row['ram'] ."</td>
                         </tr>
                         <tr>
-                            <th scope='row'>Fingerprint: </th>
-                            <td>". $row['freader'] ."</td>
+                            <th scope='row'>Color: </th>
+                            <td>". $row['color'] ."</td>
                         </tr>
                         <tr>
                             <th scope='row'>Connectivity: </th>
@@ -113,6 +113,10 @@
                         <tr>
                             <th scope='row'>Sensor: </th>
                             <td>". $row['sensor'] ."</td>
+                        </tr>
+                        <tr>
+                            <th scope='row'>Release Date: </th>
+                            <td>". $row['r_date'] ."</td>
                         </tr>
                         <tr>
                             <th scope='row' style='background-color:#DCDCDC;'>Price: </th>

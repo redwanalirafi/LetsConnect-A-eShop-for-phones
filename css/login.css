@@ -2,7 +2,47 @@ body {
     font-family: "Lato", sans-serif;
 }
 
-
+.navbar{
+    padding-top: 0;
+    padding-bottom: 0;
+}
+.navbar-light .navbar-nav .nav-link {
+    color: black;
+    font-size: 16px;
+    padding: 0;
+    margin-left:20px;
+    position: relative;
+}
+.navbar-light .navbar-nav .nav-link::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    height: 2px;
+    width: 0%;
+    background: #008ed6;
+}
+.navbar-light .navbar-nav .nav-link::after{
+    content: '';
+    position: absolute;
+    right: 0;
+    bottom: -5px;
+    height: 2px;
+    width: 0%;
+    background: #008ed6;
+}
+.navbar-light .navbar-nav .nav-link:hover::before{
+    width: 42%;
+    transition: .3s;
+}
+.navbar-light .navbar-nav .nav-link:hover::after{
+    width: 42%;
+    transition: .3s;
+}
+.navbar-light .navbar-nav .nav-link:focus, .navbar-light .navbar-nav .nav-link:hover {
+    font-weight: 400;
+    color: #008ed6;
+}
 
 .main-head{
     height: 150px;
@@ -52,7 +92,7 @@ body {
     }
 
     .login-form {
-        margin-top: 60%;
+        margin-top: 40%;
     }
 
     .register-form{
@@ -74,4 +114,7 @@ body {
 .btn-black{
     background-color: #000 !important;
     color: #fff;
+}
+.btn-black:hover{
+    color: rgb(221, 214, 214);
 }

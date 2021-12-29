@@ -27,7 +27,7 @@
         rel="stylesheet">
 
     <link rel="stylesheet" href="style.css">
-    <title>Pending Posts</title>
+    <title>Manage Order</title>
 </head>
 
 <body>
@@ -56,15 +56,16 @@
                     <li class="nav-item">
                         <a class="nav-link text-light" href="./delete.php">Delete Product</a>
                     </li>
-                    <li class="nav-item " style="background-color: #111111;">
+                    <li class="nav-item ">
                         <a class="nav-link text-light" href="./pending.php">Pending Product</a>
                     </li>
                     <li class="nav-item " >
                         <a class="nav-link text-light" href="./add_stuff.php">Add Stuff</a>
                     </li>
-                    <li class='nav-item'>
+                    <li class='nav-item' style="background-color: #111111;">
                         <a class='nav-link text-light' href='./manage_order.php'>Manage Order</a>
                     </li>
+
                 </ul>
                 <form class="d-flex">
                     <a href="./profile.php" class="btn btn-light mx-2" type="submit">Profile</a>
@@ -75,59 +76,33 @@
     </nav>
 
 
+    
 
-    <div class="container my-2 text-center">
-        <h2>Pending list:</h2>
+    <div class="container py-3">
 
         <table class="table mt-3">
             <thead>
                 <tr>
                     <th scope="col">#</th>
                     <th scope="col">Username</th>
-                    <th scope="col">Description</th>
-                    <th scope="col">Actions</th>
+                    <th scope="col">Order Description</th>
+                    <th scope="col">Amount</th>
+                    <th scope="col">Action</th>
                 </tr>
             </thead>
             <tbody>
-
-                <?php
-                    include_once 'db.php';
-                    
-                    $sql = "SELECT id,seller,pending FROM products ORDER BY id DESC;";
-                    $result=mysqli_query($conn,$sql);
-                    $count=0;
-                    while($row = $result->fetch_assoc()) {
-                        $stat = $row['pending'];            // Print a single column data
-                    
-                        if($stat==0){
-                            echo "
-                            <tr>
-                                <th scope='row'>" . ++$count . "</th>
-                                <td>" . $row['seller'] . "</td>
-                                <td>
-                                    <a type='button' class='btn btn-info' btn-info' href='generate_post.php?id=" . $row['id'] . "'> Viewpost  </a> 
-                                </td>
-                                <td>
-                                    <a type='button' class='btn btn-success' btn-success' href='op_app.php?id=" . $row['id'] . "'> Approve  </a> 
-                                    <a type='button' class='btn btn-danger' btn-danger' href='op_del.php?id=" . $row['id'] . "'> Delete  </a> 
-                                </td>
-                            </tr>
-                            ";
-                        }
-                    }
-
-
-                ?>
-                   
-
-
+                <tr>
+                    <th scope='row'>1</th>
+                    <td>user1</td>
+                    <td><a type='button' class='btn btn-info' href='edit_page.php?id='> Details  </a></td>
+                    <td>BDT. 55555</td>
+                    <td>
+                        <a type='button' class='btn btn-warning' href='edit_page.php?id='> Complete  </a> 
+                    </td>
+                </tr>
             </tbody>
         </table>
-
-
     </div>
-
-
 
 
     <!-- Optional JavaScript; choose one of the two! -->

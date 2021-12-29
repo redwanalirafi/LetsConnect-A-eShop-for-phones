@@ -1,5 +1,8 @@
 <?php
     include "../auth.php";
+    if($_SESSION['role']!="admin"){
+        echo "<script>top.window.location = './index.php?error=Access denied'</script>";
+    }
 ?>
 
 <!doctype html>
@@ -24,7 +27,7 @@
         rel="stylesheet">
 
     <link rel="stylesheet" href="style.css">
-    <title>Dashboard</title>
+    <title>Profile Edit</title>
 </head>
 
 <body>
@@ -41,7 +44,7 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item" style="background-color: #111111;">
+                    <li class="nav-item">
                         <a class="nav-link text-light" aria-current="page" href="./index.php">Dashboard</a>
                     </li>
                     <?php
@@ -71,7 +74,6 @@
                             <li class='nav-item'>
                                 <a class='nav-link text-light' href='./manage_order.php'>Manage Order</a>
                             </li>
-                            
                             ";
                     }
 
@@ -86,73 +88,100 @@
         </div>
     </nav>
 
+    <?php
+        include "db.php";
+            
+        $sql = "SELECT * FROM users where username='". $_SESSION['username'] ."';";
+        $result=mysqli_query($conn,$sql);
+        $row=mysqli_fetch_assoc($result);
+
+
+    ?>
 
 
     <div class="container my-5 text-center d-float">
-        <h2>Welcome Back,
-            <?php echo $_SESSION['username']; ?>
-        </h2>
-        <hr style="margin-top: 50px;">
-        <div class="row row-cols-1 row-cols-md-2 g-4 my-5">
-            <div class="col">
-                <a href="./add.php" style="text-decoration: none;">
-                    <div class="card text-dark bg-light mb-3" style="width: auto;">
-                        <div class="card-header">Add Product</div>
-                        <div class="card-body">
-                            <span style="font-size: 50px; color: #111111;">
-                                <i class="fas fa-plus-square"></i>
-                            </span>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col">
-                <a href="./edit.php" style="text-decoration: none;">
-                    <div class="card text-dark bg-light mb-3" style="width: auto;">
-                        <div class="card-header">Edit Product</div>
-                        <div class="card-body">
-                            <span style="font-size: 50px; color: #111111;">
-                                <i class="fas fa-edit"></i>
-                            </span>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col">
-                <a href="./delete.php" style="text-decoration: none;">
-                    <div class="card text-dark bg-light mb-3" style="width: auto;">
-                        <div class="card-header">Delete Product</div>
-                        <div class="card-body">
-                            <span style="font-size: 50px; color: #111111;">
-                                <i class="fas fa-trash-alt"></i>
-                            </span>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col">
-                <?php
+        <div class="container">
+            <div class="main-body">
 
-                if($_SESSION['role']=="admin"){
-                    echo "<a href='./pending.php' style='text-decoration: none;'>
-                    <div class='card text-dark bg-light mb-3' style='width: auto;'>
-                        <div class='card-header'>Pending Product</div>
-                        <div class='card-body'>
-                            <span style='font-size: 50px; color: #111111;'>
-                                    <i class='fas fa-history'></i>
-                                </span>
+                <div class="row gutters-sm">
+                    <div class="col-md-4 mb-3">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="d-flex flex-column align-items-center text-center">
+                                    <img src="https://cdn4.iconfinder.com/data/icons/diversity-v2-0-volume-03/64/superhero-spiderman-comics-512.png" alt="Admin"
+                                        class="rounded-circle" width="150">
+                                    <div class="mt-3">
+                                        <h4><?php echo $_SESSION['username']; ?></h4><hr>
+                                        <h2><?php echo $row['full_name']; ?></h2><hr><br>
+                                        <p class="text-secondary mb-1">Full Stack Developer</p>
+                                        <p class="text-muted font-size-sm">Dhaka, Bangladesh</p><br>
+                                        <a href="./msg_page.php" class="btn btn-outline-primary">Message</a>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                    </a>
-                    ";
-                }
+                        
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card mb-3">
 
-                ?>
-                
+                            <form action="./op_profile_edit.php" method="post">
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-sm-3">
+                                            <h5 class="mb-0">Full Name</h5>
+                                        </div>
+                                        <div class="col-sm-9 text-secondary">
+                                            <input type="text" name="f_name" value="<?php echo $row['full_name']; ?>">
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <div class="row">
+                                        <div class="col-sm-3">
+                                            <h5 class="mb-0">Email</h5>
+                                        </div>
+                                        <div class="col-sm-9 text-secondary">
+                                            <input type="text" name="email" value="<?php echo $row['email']; ?>">  
+                                            
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <div class="row">
+                                        <div class="col-sm-3">
+                                            <h5 class="mb-0">Phone</h5>
+                                        </div>
+                                        <div class="col-sm-9 text-secondary">
+                                            <input type="text" name="phone" value="<?php echo $row['phone']; ?>">  
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    
+                                    <div class="row">
+                                        <div class="col-sm-3">
+                                            <h5 class="mb-0">Address</h5>
+                                        </div>
+                                        <div class="col-sm-9 text-secondary">
+                                            Dhaka, Bangldesh
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <div class="row">
+                                        <div class="col-sm-12">
+                                            <button class="btn btn-warning" name="submit" type="submit">Update Profile</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
 
-        <hr style="margin-top: 50px;">
+
+
     </div>
 
 

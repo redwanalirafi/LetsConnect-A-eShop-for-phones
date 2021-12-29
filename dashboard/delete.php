@@ -32,7 +32,7 @@
             <span style="font-size: 40px; color: white;">
                 <i class="fas fa-store"></i>
             </span>
-            <a class="navbar-brand text-light" href="./index.php">&nbsp;Name</a>
+            <a class="navbar-brand text-light" href="./index.php">&nbsp;Let's Connect</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                 aria-label="Toggle navigation">
@@ -60,6 +60,9 @@
                             </li>
                             <li class='nav-item'>
                                 <a class='nav-link text-light' href='./add_stuff.php'>Add Stuff</a>
+                            </li>
+                            <li class='nav-item'>
+                                <a class='nav-link text-light' href='./manage_order.php'>Manage Order</a>
                             </li>
                             ";
                     }
