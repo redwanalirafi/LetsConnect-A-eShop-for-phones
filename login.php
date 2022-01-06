@@ -22,6 +22,7 @@
 </head>
 
 <body>
+
    <div class="sidenav">
       <div class="login-main-text">
          <h1 style="font-family: 'Lobster', cursive; color: #CD1818;"> <span style="color: #F3950D;">Lets</span> Connect
@@ -31,6 +32,7 @@
       </div>
    </div>
    <div class="main">
+   
       <div class="col-md-6 col-sm-12">
          <div class="login-form">
             <form action="validate_user.php" method="post">

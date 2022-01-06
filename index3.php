@@ -1,6 +1,7 @@
 <?php
     session_start();
 ?>
+
 <!doctype html>
 <html lang="en">
 
@@ -24,9 +25,8 @@
 </head>
 
 <body>
-
-    <header style=" background-color: black;">
-        <div class="container-fluid" style="min-height: 100vh;">
+    <header style="background-color: black;">
+        <div class="container-fluid">
             <div class="row navbar">
                 <nav class="navbar navbar-expand-lg navbar-light">
                     <div class="container-fluid">
@@ -53,18 +53,17 @@
                                             <img src='https://s3.eu-central-1.amazonaws.com/bootstrapbaymisc/blog/24_days_bootstrap/fox.jpg' width='40' height='40' class='rounded-circle'>
                                         </a>
                                         <ul class='dropdown-menu' aria-labelledby='dropdownMenuButton1'>
-                                            <li><a class='dropdown-item' href='#'>". $_SESSION['username'] ."</a></li>
-                                            <hr>
-                                            <li><a class='dropdown-item' href='./logout.php'>Logout
+                                            <li><a class='dropdown-item' href='#'>Order History</a></li><hr>
+                                            <li><a class='dropdown-item' href='#'>Logout
                                             </a></li>
                                             
                                         </ul>
                                         ";
                                 }
                               ?>
-
-
-
+                                    
+                                        
+                                    
 
                                 </li>
                                 <li class="nav-item">
@@ -78,23 +77,20 @@
             </div>
             <div class="row hg align-items-center" style="padding-left: 10%;">
                 <div class="col-lg-6 col-md-8 col-sm-12 col-10 left">
-                    <h4>BE INNOVATIVE AND TRENDY WITH YOUR SMARTPHONE</h4>
-                    <h1>Be Connected with your <br> Friends & Families.</h1>
-                    <P>
-                        Etiam ullamcorper et turpis eget hendrerit. Praesent varius risus mi, at elementum magna
+                    <h4>INTRODUCING LUCID THEME</h4>
+                    <h1>Carefully crafted and beautiful landing page.</h1>
+                    <P>Etiam ullamcorper et turpis eget hendrerit. Praesent varius risus mi, at elementum magna
                         ultricies accumsan. Cras venenatis lacus sed dolor placerat tempus. Morbi blandit at neque ut
-                        imperdiet.
-                    </P>
+                        imperdiet.</P>
+                    <a href="" class="btn btn-download">DOWNLOAD NOW</a>>
+                    <a href="" class="btn btn-view">VIEW FEATURES</a>>
                 </div>
-                <div class="col-lg-6 phone mb-5">
-                    <img src="images/background-phone.png" alt="" class="img-fluid">
+                <div class="col-lg-6 phone">
+                    <img src="images/background-phone.png" alt="" class="img-fluid" width="1300px" height="1300px">
                 </div>
             </div>
         </div>
-
     </header>
-
-
 
 
 
@@ -163,7 +159,6 @@
 
     </section>
 
-
     <footer>
         <div class="container">
             <div class="row">
@@ -178,28 +173,36 @@
                 </div>
             </div>
             <div class="row text-center">
-                <p>Copyright © 2022 Let's Connect All rights reserved.</p>
+                <p>COPYRIGHT &copy; 2014 LUCID ONEPAGE THEME</p>
             </div>
         </div>
     </footer>
 
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="js/owl.carousel.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/owl.carousel.min.js  "></script>
     <script>
         $(document).ready(function () {
-            $('.owl-carousel').owlCarousel({
-                items: 1,
+            $(".owl-carousel").owlCarousel({
+                items: 2,
                 margin: 20,
                 loop: true,
                 autoplay: true,
-                autoplayTimeout: 3500,
-                smartSpeed: 1000,
+                autoplayTimeout: 3000,
+                smartSpeed: 500,
                 nav: true,
+
+                responsive: {
+                    0: {
+                        items: 1
+                    },
+                    700: {
+                        items: 2
+                    }
+                }
             });
         });
-
     </script>
 </body>
 

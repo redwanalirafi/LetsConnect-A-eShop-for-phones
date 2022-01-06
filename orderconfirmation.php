@@ -1,3 +1,6 @@
+<?php
+    include "./auth2.php";
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -36,16 +39,16 @@
                         <div class="collapse navbar-collapse" id="navbarSupportedContent">
                             <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                                 <li class="nav-item">
-                                    <a class="nav-link" aria-current="page" href="./index.html">Home</a>
+                                    <a class="nav-link" aria-current="page" href="./index.php">Home</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="./login.html">Login</a>
+                                    <a class="nav-link" href="./login.php">Login</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="./about.html">About</a>
+                                    <a class="nav-link" href="./about.php">About</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="./contact.html">Contact Us</a>
+                                    <a class="nav-link" href="./contact.php">Contact Us</a>
                                 </li>
                             </ul>
                 </nav>
@@ -97,7 +100,7 @@
                 </div>
                 <div style="text-align: center;">
                     <button type="submit" class="btn btn-course" style="margin-right: 5px;"><b>CONFIRM</b></button>
-                    <a href="./product.html" class="btn btn-course" style="margin-left: 5px;"><b>BACK</b></a>
+                    <a href="./index.php" class="btn btn-course" style="margin-left: 5px;"><b>BACK</b></a>
                 </div>
                 <h5 style="text-align: center;"> <b>Payment Method:</b> Cash on Delivery</h5>
 

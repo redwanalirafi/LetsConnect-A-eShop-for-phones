@@ -1,24 +1,22 @@
 *{
     margin: 0;
     padding: 0;
-    font-family: font-family: 'Source Sans Pro', sans-serif;;
+    font-family: 'Source Sans Pro', sans-serif;;
 }
-/*header{
-    background-image: url(../images/156164-light-blue-background-vector-image.jpg);
+header{
+    background-image: url(../images/banner-background.png);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    height: 100vh;
     position: relative;
-}*/
+    border: 2px solid red;
+}
 
 .banner{
-    
+    margin-top: 2%;
 }
 
-.navbar{
-    background-color: currentColor;
-}
+
 .navbar {
     position: relative;
     display: flex;
@@ -65,7 +63,7 @@
     color: #008ed6;
 }
 
-.owl-nav{
+/*.owl-nav{
     display: block;
 }
 .owl-nav .owl-prev{
@@ -117,7 +115,7 @@
     background: black;
     display: block;
     margin-right: 5px; 
-}
+}*/
 
 
 .left h4{
@@ -548,6 +546,9 @@ font-weight: 500;
 line-height: 24px;
 }
 .online_course h2{
+    
+}
+.banner_image img{
     
 }
 .brands{

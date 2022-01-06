@@ -32,7 +32,7 @@
             <span style="font-size: 40px; color: white;">
                 <i class="fas fa-store"></i>
             </span>
-            <a class="navbar-brand text-light" href="./index.php">&nbsp;Let's Connect</a>
+            <a class="navbar-brand text-light" href="../index.php">&nbsp;Let's Connect</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                 aria-label="Toggle navigation">
@@ -59,6 +59,9 @@
                                 </li>
                                 <li class='nav-item'>
                                     <a class='nav-link text-light' href='./add_stuff.php'>Add Stuff</a>
+                                </li>
+                                <li class='nav-item'>
+                                        <a class='nav-link text-light' href='./manage_order.php'>Manage Order</a>
                                 </li>
                                 ";
                         }
@@ -92,6 +95,7 @@
                 <tr>
                     <th scope="col">#</th>
                     <th scope="col">Username</th>
+                    <th scope="col">Model</th>
                     <th scope="col">Description</th>
                     <th scope="col">Actions</th>
                 </tr>
@@ -108,20 +112,31 @@
                         $sql = "SELECT id,seller,pending FROM products ORDER BY id DESC;";
                         $result=mysqli_query($conn,$sql);
                         $count=0;
-                        while($row = $result->fetch_assoc()) {
-                            $stat = $row['pending'];            // Print a single column data
+
                         
+
+                        while($row = $result->fetch_assoc()) {
+                            $stat = $row['pending'];    
+                            
+                            $id=$row['id'];
+                        
+                            $sql2 = "SELECT model FROM product_details where id=". $id . ";";
+                            $result2=mysqli_query($conn,$sql2);
+                            $row2 = $result2->fetch_assoc();
+
                             if($stat==1){
                                 echo "
                                 <tr>
                                     <th scope='row'>" . ++$count . "</th>
                                     <td>" . $row['seller'] . "</td>
+                                    <td>" . $row2['model'] . "</td>
                                     <td>
                                         <a type='button' class='btn btn-info' btn-info' href='generate_post.php?id=" . $row['id'] . "'> Viewpost  </a> 
                                     </td>
                                     <td>
                                         <a type='button' class='btn btn-warning' btn-warning' href='edit_page.php?id=" . $row['id'] . "'> Edit  </a> 
                                     </td>
+
                                 </tr>
                                 ";
                             }

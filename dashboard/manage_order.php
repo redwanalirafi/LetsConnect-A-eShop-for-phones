@@ -36,7 +36,7 @@
             <span style="font-size: 40px; color: white;">
                 <i class="fas fa-store"></i>
             </span>
-            <a class="navbar-brand text-light" href="./index.php">&nbsp;Let's Connect</a>
+            <a class="navbar-brand text-light" href="../index.php">&nbsp;Let's Connect</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                 aria-label="Toggle navigation">
@@ -84,22 +84,49 @@
             <thead>
                 <tr>
                     <th scope="col">#</th>
-                    <th scope="col">Username</th>
+                    <th scope="col">Model Number</th>
                     <th scope="col">Order Description</th>
                     <th scope="col">Amount</th>
                     <th scope="col">Action</th>
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <th scope='row'>1</th>
-                    <td>user1</td>
-                    <td><a type='button' class='btn btn-info' href='edit_page.php?id='> Details  </a></td>
-                    <td>BDT. 55555</td>
-                    <td>
-                        <a type='button' class='btn btn-warning' href='edit_page.php?id='> Complete  </a> 
-                    </td>
-                </tr>
+                
+
+                <?php
+                    include_once 'db.php';
+
+                
+
+                    
+                    
+                        $sql = "SELECT * FROM orders ORDER BY order_id DESC;";
+                        $result=mysqli_query($conn,$sql);
+                        $count=0;
+                        while($row = $result->fetch_assoc()) {
+                            $stat = $row['status'];            
+                        
+                            if($stat=="pending"){
+                                $sql2 = "SELECT model FROM product_details where id=". $row['p_id'] . ";";
+                                $result2=mysqli_query($conn,$sql2);
+                                $row2 = $result2->fetch_assoc();
+                                echo "
+                                <tr>
+                                    <th scope='row'>" . ++$count . "</th>
+                                    <td>" . $row2['model'] . "</td>
+                                    <td>
+                                        <a type='button' class='btn btn-info' btn-info' href='view_order.php?id=" . $row['order_id'] . "'> View Details  </a> 
+                                    </td>
+                                    <td>" . $row['amount'] . "</td>
+                                    
+                                    <td><a class='btn btn-warning' href=op_complete.php?id=". $row['order_id'] .">Complete Order</a></td>
+                                    </td>
+                                </tr>
+                                ";
+                            }
+                        }
+                    
+                ?>
             </tbody>
         </table>
     </div>

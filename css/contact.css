@@ -1,3 +1,4 @@
+
 .navbar{
     background-color: currentColor;
     padding-top: 0;
@@ -88,7 +89,7 @@
     margin-bottom: -40px;
 }
 .contact{
-    background-color: rgb(121, 238, 179);
+    background: #c6d1d8e0;
     position: relative;
     padding-bottom: 280px;
 }

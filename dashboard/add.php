@@ -36,7 +36,7 @@
             <span style="font-size: 40px; color: white;">
                 <i class="fas fa-store"></i>
             </span>
-            <a class="navbar-brand text-light" href="./index.php">&nbsp;Let's Connect</a>
+            <a class="navbar-brand text-light" href="../index.php">&nbsp;Let's Connect</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                 aria-label="Toggle navigation">
@@ -95,7 +95,7 @@
                     style="color: blue; font-weight: bold;" name="x0">
             </div>
 
-
+            <input class="form-control my-3" type="text" placeholder="Brand" name="xbrand">
             <input class="form-control my-3" type="text" placeholder="Display" name="x1">
             <input class="form-control my-3" type="text" placeholder="Processor" name="x2">
             <input class="form-control my-3" type="text" placeholder="Front Camera" name="x3">
@@ -104,7 +104,7 @@
             <input class="form-control my-3" type="text" placeholder="Storage" name="x5">
             <input class="form-control my-3" type="text" placeholder="Battery" name="x6">
             <input class="form-control my-3" type="text" placeholder="Ram" name="x7">
-            <input class="form-control my-3" type="text" placeholder="Fingerprint Reader" name="x8">
+            <input class="form-control my-3" type="text" placeholder="Color" name="x8">
             <input class="form-control my-3" type="text" placeholder="Connectivity" name="x9">
             <input class="form-control my-3" type="text" placeholder="SIM Card" name="x10">
             <input class="form-control my-3" type="text" placeholder="Sensors" name="x11">

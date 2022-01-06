@@ -19,7 +19,8 @@
         $x10 = $_POST['x10'];
         $x11 = $_POST['x11'];
         $x12 = $_POST['x12'];
-        $x13 = $_POST['x13'];   
+        $x13 = $_POST['x13'];  
+        $xbrand=$_POST['xbrand'] ;
 
         $sql0 = "INSERT INTO products (seller, pending) values ('".$_SESSION['username']."',0)";
 
@@ -46,11 +47,14 @@
 
         
         
-        $sql = "INSERT INTO product_details (id, model, display, processor, fcam, rcam, storage, battery, ram, freader, connectivity, sim, sensor, picture, price) 
-        VALUES ($last_id,'$x0', '$x1', '$x2', '$x3', '$x4', '$x5', '$x6', '$x7', '$x8', '$x9', '$x10', '$x11', '$x12', '$x13');";
+        $sql = "INSERT INTO product_details (id, brand, model, display, processor, fcam, rcam, storage, battery, ram, color, connectivity, sim, sensor, picture, price) 
+        VALUES ($last_id,'$xbrand','$x0', '$x1', '$x2', '$x3', '$x4', '$x5', '$x6', '$x7', '$x8', '$x9', '$x10', '$x11', '$x12', '$x13');";
 
         
         //$sql = "INSERT INTO product_details (ram) VALUES('gx');";
+
+        echo $sql;
+
         if (mysqli_query($conn, $sql)) {
             $img = "<img src='https://img.icons8.com/color/50/000000/checked-2.png'/>";
             $checker=true;

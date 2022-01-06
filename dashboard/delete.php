@@ -32,7 +32,7 @@
             <span style="font-size: 40px; color: white;">
                 <i class="fas fa-store"></i>
             </span>
-            <a class="navbar-brand text-light" href="./index.php">&nbsp;Let's Connect</a>
+            <a class="navbar-brand text-light" href="../index.php">&nbsp;Let's Connect</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                 aria-label="Toggle navigation">
@@ -118,10 +118,16 @@
                             $stat = $row['pending'];            // Print a single column data
                         
                             if($stat==1){
+                                $id=$row['id'];
+                        
+                                $sql2 = "SELECT model FROM product_details where id=". $id . ";";
+                                $result2=mysqli_query($conn,$sql2);
+                                $row2 = $result2->fetch_assoc();
+
                                 echo "
                                 <tr>
                                     <th scope='row'>" . ++$count . "</th>
-                                    <td>" . $row['seller'] . "</td>
+                                    <td>" . $row2['model'] . "</td>
                                     <td>
                                         <a type='button' class='btn btn-info' btn-info' href='generate_post.php?id=" . $row['id'] . "'> Viewpost  </a> 
                                     </td>

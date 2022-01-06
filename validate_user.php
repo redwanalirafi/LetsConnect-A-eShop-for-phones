@@ -32,8 +32,10 @@
         }
         else{
             $_SESSION['role']="user";
+            echo "<script>top.window.location = './index.php'</script>";
         }
-        header("Location: dashboard/index.php");
+        if($_SESSION['role']!="user")header("Location: dashboard/index.php");
+        else header("Location: index.php");
     }
     else{
         header("Location: login.php?error=wrong password");

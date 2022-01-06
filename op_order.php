@@ -9,8 +9,8 @@
     $amount = $_POST['pay'];
     $id= $_POST['pid'];
 
-    $sql = "INSERT INTO `order` (p_id,amount,name,phone,address) 
-    VALUES ($id,'$amount','$name','$phone','$address')";
+    $sql = "INSERT INTO `orders` (p_id,amount,name,phone,address,status) 
+    VALUES ($id,'$amount','$name','$phone','$address','pending')";
 
     //mysqli_query($conn,$sql);
     
